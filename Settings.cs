@@ -2,19 +2,19 @@
 using System.IO;
 using System.Xml.Linq;
 
-namespace SamFirm
+namespace hadesFirm
 {
   internal class Settings
   {
-    private const string SettingFile = "SamFirm.xml";
+    private const string SettingFile = "hadesFirm.xml";
 
     public static string ReadSetting(string element)
     {
       try
       {
-        if (!File.Exists("SamFirm.xml"))
+        if (!File.Exists("hadesFirm.xml"))
           Settings.GenerateSettings();
-        return XDocument.Load("SamFirm.xml").Element((XName) "SamFirm").Element((XName) element).Value;
+        return XDocument.Load("hadesFirm.xml").Element((XName) "hadesFirm").Element((XName) element).Value;
       }
       catch (Exception ex)
       {
@@ -25,20 +25,20 @@ namespace SamFirm
 
     public static void SetSetting(string element, string value)
     {
-      if (!File.Exists("SamFirm.xml"))
+      if (!File.Exists("hadesFirm.xml"))
         Settings.GenerateSettings();
-      XDocument xdocument = XDocument.Load("SamFirm.xml");
-      XElement xelement = xdocument.Element((XName) "SamFirm").Element((XName) element);
+      XDocument xdocument = XDocument.Load("hadesFirm.xml");
+      XElement xelement = xdocument.Element((XName) "hadesFirm").Element((XName) element);
       if (xelement == null)
-        xdocument.Element((XName) "SamFirm").Add((object) new XElement((XName) element, (object) value));
+        xdocument.Element((XName) "hadesFirm").Add((object) new XElement((XName) element, (object) value));
       else
         xelement.Value = value;
-      xdocument.Save("SamFirm.xml");
+      xdocument.Save("hadesFirm.xml");
     }
 
     private static void GenerateSettings()
     {
-      File.WriteAllText("SamFirm.xml", "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<SamFirm>\r\n    <SaveFileDialog></SaveFileDialog>\r\n    <AutoInfo></AutoInfo>\r\n\t<Region></Region>\r\n\t<Model></Model>\r\n\t<PDAVer></PDAVer>\r\n\t<CSCVer></CSCVer>\r\n\t<PHONEVer></PHONEVer>\r\n    <BinaryNature></BinaryNature>\r\n    <CheckCRC></CheckCRC>\r\n    <AutoDecrypt></AutoDecrypt>\r\n</SamFirm>");
+      File.WriteAllText("hadesFirm.xml", "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<hadesFirm>\r\n    <SaveFileDialog></SaveFileDialog>\r\n    <AutoInfo></AutoInfo>\r\n\t<Region></Region>\r\n\t<Model></Model>\r\n\t<PDAVer></PDAVer>\r\n\t<CSCVer></CSCVer>\r\n\t<PHONEVer></PHONEVer>\r\n    <BinaryNature></BinaryNature>\r\n    <CheckCRC></CheckCRC>\r\n    <AutoDecrypt></AutoDecrypt>\r\n</hadesFirm>");
     }
   }
 }

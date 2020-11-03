@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SamFirm
+namespace hadesFirm
 {
   internal class Logger
   {
@@ -63,12 +63,12 @@ namespace SamFirm
     {
       if (string.IsNullOrEmpty(Logger.form.log_textbox.Text))
         return;
-      if (File.Exists("SamFirm.log") && new FileInfo("SamFirm.log").Length > 2097152L)
+      if (File.Exists("hadesFirm.log") && new FileInfo("hadesFirm.log").Length > 2097152L)
       {
-        File.Delete("SamFirm.log.old");
-        File.Move("SamFirm.log", "SamFirm.log.old");
+        File.Delete("hadesFirm.log.old");
+        File.Move("hadesFirm.log", "hadesFirm.log.old");
       }
-      using (TextWriter textWriter = (TextWriter) new StreamWriter((Stream) new FileStream("SamFirm.log", FileMode.Append)))
+      using (TextWriter textWriter = (TextWriter) new StreamWriter((Stream) new FileStream("hadesFirm.log", FileMode.Append)))
       {
         textWriter.WriteLine();
         textWriter.WriteLine(Logger.GetTimeDate());
