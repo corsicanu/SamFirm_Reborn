@@ -4,10 +4,10 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("hadesFirm Reborn")]
-[assembly: AssemblyFileVersion("0.3.6.1")]
+[assembly: AssemblyFileVersion("0.3.6.2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCopyright("Copyright zxz0O0 ©  2015 / Ivan Meler 2020")]
+[assembly: AssemblyCopyright("Copyright zxz0O0 ©  2015 / Ivan Meler 2020 / corsicanu © 2020-2021")]
 [assembly: AssemblyTitle("hadesFirm Reborn")]
 [assembly: AssemblyTrademark("")]
 [assembly: ComVisible(false)]
